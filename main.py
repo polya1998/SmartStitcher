@@ -47,7 +47,7 @@ class ArrangeDialog(QtWidgets.QDialog,Ui_Dialog):
     # 处理activated信号
     def TypeBoxhandleActivated(self, index):
         select_type=self.TypeBox.itemText(index)
-        if(select_type=="4.filened by filename"):
+        if(select_type=="5.filened by filename"):
             self.orderBox.clear()
             self.orderBox.addItem("Defined-by-filename")
         else:

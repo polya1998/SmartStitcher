@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'n:\gui3.20\3.18\arrangement_dialog.ui'
+# Form implementation generated from reading ui file 'h:\smartSTitcher\3.18\arrangement_dialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -27,6 +27,7 @@ class Ui_Dialog(object):
         self.horizontalLayout.addWidget(self.typelabel)
         self.TypeBox = QtWidgets.QComboBox(Dialog)
         self.TypeBox.setObjectName("TypeBox")
+        self.TypeBox.addItem("")
         self.TypeBox.addItem("")
         self.TypeBox.addItem("")
         self.TypeBox.addItem("")
@@ -65,5 +66,6 @@ class Ui_Dialog(object):
         self.TypeBox.setItemText(0, _translate("Dialog", "1.Grid: row-by-row"))
         self.TypeBox.setItemText(1, _translate("Dialog", "2.Grid: column-by-column"))
         self.TypeBox.setItemText(2, _translate("Dialog", "3.Grid: snake-by-row"))
-        self.TypeBox.setItemText(3, _translate("Dialog", "4.filened by filename"))
+        self.TypeBox.setItemText(3, _translate("Dialog", "4.Grid: snake-by-col"))
+        self.TypeBox.setItemText(4, _translate("Dialog", "5.filened by filename"))
         self.orderlabel.setText(_translate("Dialog", "order:"))

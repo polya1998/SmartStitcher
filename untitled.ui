@@ -219,13 +219,6 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="2">
-             <widget class="QCheckBox" name="part_stitch2">
-              <property name="text">
-               <string>part_stitch</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="2">
              <widget class="QCheckBox" name="part_stitch1">
               <property name="text">
@@ -258,6 +251,13 @@
              <widget class="QCheckBox" name="all_stitch1">
               <property name="text">
                <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QCheckBox" name="part_stitch2">
+              <property name="text">
+               <string>part_stitch</string>
               </property>
              </widget>
             </item>
@@ -339,6 +339,13 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="2">
+         <widget class="QPushButton" name="MIPpreviewButton">
+          <property name="text">
+           <string>3.MIP preview</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="5">
          <widget class="QPushButton" name="MIP_high_res_pushButton">
           <property name="text">
@@ -353,38 +360,10 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="MIPpreviewButton">
-          <property name="text">
-           <string>3.MIP preview</string>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="5">
          <widget class="QPushButton" name="HR_stitched_MIP_pushButton">
           <property name="text">
-           <string>13.HR-stitched-MIP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QPushButton" name="HR_z_slice_pushButton">
-          <property name="text">
-           <string>17.HR-z_slice-result</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="high_res_op_pushButton">
-          <property name="text">
-           <string>9.high_res_optimazation</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="4">
-         <widget class="QPushButton" name="low_res_z_shift_pushButton">
-          <property name="text">
-           <string>5.low_res_z_shift</string>
+           <string>HR-stitched-MIP</string>
           </property>
          </widget>
         </item>
@@ -395,17 +374,17 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="LR_z_slice_pushButton">
+        <item row="1" column="7">
+         <widget class="QPushButton" name="high_res_z_shift_pushButton">
           <property name="text">
-           <string>16.LR-z_slice-result</string>
+           <string>8.high_res_z_shift</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="7">
-         <widget class="QPushButton" name="make_slice_HR_pushButton">
+        <item row="2" column="0">
+         <widget class="QPushButton" name="high_res_op_pushButton">
           <property name="text">
-           <string>15.make_slice_HR</string>
+           <string>9.high_res_optimazation</string>
           </property>
          </widget>
         </item>
@@ -416,31 +395,10 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
-         <widget class="QPushButton" name="output_terafly_pushButton">
-          <property name="text">
-           <string>18.output_terafly</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="3">
          <widget class="QPushButton" name="xy_shift_pushButton">
           <property name="text">
            <string>4.low_res_x_y_shift</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="4">
-         <widget class="QPushButton" name="LR_stitched_MIP_pushButton">
-          <property name="text">
-           <string>13.LR-stitched-MIP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="3">
-         <widget class="QPushButton" name="test_threadpushButton">
-          <property name="text">
-           <string>test_thread</string>
           </property>
          </widget>
         </item>
@@ -451,17 +409,10 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="6">
-         <widget class="QPushButton" name="make_slice_LR_pushButton">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="ArrangementButton">
           <property name="text">
-           <string>14.make_slice_LR</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="7">
-         <widget class="QPushButton" name="high_res_z_shift_pushButton">
-          <property name="text">
-           <string>8.high_res_z_shift</string>
+           <string>1.Arrangement</string>
           </property>
          </widget>
         </item>
@@ -472,10 +423,59 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="ArrangementButton">
+        <item row="2" column="4">
+         <widget class="QPushButton" name="LR_stitched_MIP_pushButton">
           <property name="text">
-           <string>1.Arrangement</string>
+           <string>LR-stitched-MIP</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="low_res_z_shift_pushButton">
+          <property name="text">
+           <string>5.low_res_z_shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QPushButton" name="LR_z_slice_pushButton">
+          <property name="text">
+           <string>LR-z_slice-result</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="7">
+         <widget class="QPushButton" name="HR_z_slice_pushButton">
+          <property name="text">
+           <string>HR-z_slice-result</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="output_terafly_pushButton">
+          <property name="text">
+           <string>output_terafly</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="7">
+         <widget class="QPushButton" name="test_threadpushButton">
+          <property name="text">
+           <string>test_thread</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <widget class="QPushButton" name="make_slice_HR_pushButton">
+          <property name="text">
+           <string>make_slice_HR</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="5">
+         <widget class="QPushButton" name="make_slice_LR_pushButton">
+          <property name="text">
+           <string>make_slice_LR</string>
           </property>
          </widget>
         </item>

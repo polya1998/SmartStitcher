@@ -50,7 +50,12 @@
          </item>
          <item>
           <property name="text">
-           <string>4.filened by filename</string>
+           <string>4.Grid: snake-by-col</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>5.filened by filename</string>
           </property>
          </item>
         </widget>
