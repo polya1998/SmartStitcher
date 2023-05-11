@@ -2,6 +2,8 @@
 ---
 A stitching software that can quickly stitch **terabytes** of 3D pictures, and supports the output of results in **terafly** format.(2023.5.11)
 
+If you have any questions about using the tool, you can contact me via email 220212233@seu.edu.cn
+
 ---
 
 ## requirement
