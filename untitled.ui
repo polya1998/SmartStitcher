@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1216</width>
+    <height>745</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="InputJsonButton">
+          <property name="text">
+           <string>InputJson</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="CeateJsonButton">
+          <property name="text">
+           <string>saveJson</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="print_jsonButton">
+          <property name="text">
+           <string>print json</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="JsonInfoBox">
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="output_folderButton">
+           <property name="text">
+            <string>Output</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="input_folderButton">
+           <property name="text">
+            <string>Input</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2" colspan="3">
+          <widget class="QLineEdit" name="overlapYEdit"/>
+         </item>
+         <item row="10" column="5" colspan="2">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>vixel_size</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>       x_length</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0" colspan="4">
+          <widget class="QLineEdit" name="wildnameEdit"/>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>       overlapX</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="3" colspan="3">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>overlapY</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="7">
+          <widget class="QPushButton" name="high_res_input_folder_Button">
+           <property name="text">
+            <string>high_res</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="QLineEdit" name="z_lengthEdit"/>
+         </item>
+         <item row="1" column="7" colspan="2">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>highest_vixel_size:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" colspan="5">
+          <widget class="QLineEdit" name="output_path"/>
+         </item>
+         <item row="1" column="9">
+          <widget class="QLineEdit" name="highest_vixel_sizeEdit"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLineEdit" name="overlapXEdit">
+           <property name="minimumSize">
+            <size>
+             <width>205</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="7" rowspan="9" colspan="3">
+          <widget class="QGroupBox" name="resgroupBox">
+           <property name="title">
+            <string>GroupBox</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="all_stitch4">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="res1_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QCheckBox" name="part_stitch3">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="all_stitch2">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="res5_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QCheckBox" name="all_stitch6">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QCheckBox" name="part_stitch4">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="res6_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="res4_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="res3_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QCheckBox" name="part_stitch5">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="all_stitch5">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QCheckBox" name="part_stitch2">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QCheckBox" name="part_stitch1">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="all_stitch3">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QCheckBox" name="part_stitch6">
+              <property name="text">
+               <string>part_stitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="res2_label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QCheckBox" name="all_stitch1">
+              <property name="text">
+               <string>all_stitch</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="2" colspan="3">
+          <widget class="QLineEdit" name="y_lengthEdit"/>
+         </item>
+         <item row="9" column="4" colspan="3">
+          <widget class="QLineEdit" name="vixel_sizeEdit"/>
+         </item>
+         <item row="0" column="2" colspan="5">
+          <widget class="QLineEdit" name="input_path"/>
+         </item>
+         <item row="0" column="8" colspan="2">
+          <widget class="QLineEdit" name="high_res_input_path"/>
+         </item>
+         <item row="5" column="3" colspan="3">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>y_length</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="5">
+          <widget class="QLineEdit" name="overlapZEdit"/>
+         </item>
+         <item row="10" column="0" colspan="3">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>wildname</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="4">
+          <widget class="QLabel" name="collabel">
+           <property name="text">
+            <string>  col:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="5">
+          <widget class="QLineEdit" name="collineEdit"/>
+         </item>
+         <item row="12" column="2">
+          <widget class="QLabel" name="rowlabel">
+           <property name="text">
+            <string>row:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>      z_length</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="3">
+          <widget class="QLineEdit" name="rowlineEdit"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLineEdit" name="x_lengthEdit"/>
+         </item>
+         <item row="7" column="5">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>       overlapZ</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="5">
+         <widget class="QPushButton" name="MIP_high_res_pushButton">
+          <property name="text">
+           <string>6.createMIP_high_res</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="6">
+         <widget class="QPushButton" name="high_res_x_y_shift_pushButton">
+          <property name="text">
+           <string>7.high_res_x_y_shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="MIPpreviewButton">
+          <property name="text">
+           <string>3.MIP preview</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QPushButton" name="HR_stitched_MIP_pushButton">
+          <property name="text">
+           <string>13.HR-stitched-MIP</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="HR_z_slice_pushButton">
+          <property name="text">
+           <string>17.HR-z_slice-result</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="high_res_op_pushButton">
+          <property name="text">
+           <string>9.high_res_optimazation</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="low_res_z_shift_pushButton">
+          <property name="text">
+           <string>5.low_res_z_shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="LR_shift_floatToint_pushButton">
+          <property name="text">
+           <string>12.LR-shift_floatToint</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="LR_z_slice_pushButton">
+          <property name="text">
+           <string>16.LR-z_slice-result</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="7">
+         <widget class="QPushButton" name="make_slice_HR_pushButton">
+          <property name="text">
+           <string>15.make_slice_HR</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="low_res_op_pushButton">
+          <property name="text">
+           <string>10.low_res_optimazation</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="output_terafly_pushButton">
+          <property name="text">
+           <string>18.output_terafly</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="xy_shift_pushButton">
+          <property name="text">
+           <string>4.low_res_x_y_shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="LR_stitched_MIP_pushButton">
+          <property name="text">
+           <string>13.LR-stitched-MIP</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QPushButton" name="test_threadpushButton">
+          <property name="text">
+           <string>test_thread</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="HR_shift_floatToint_pushButton">
+          <property name="text">
+           <string>11.HR-shift_floatToint</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QPushButton" name="make_slice_LR_pushButton">
+          <property name="text">
+           <string>14.make_slice_LR</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="7">
+         <widget class="QPushButton" name="high_res_z_shift_pushButton">
+          <property name="text">
+           <string>8.high_res_z_shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="MipButton">
+          <property name="text">
+           <string>2.createMIP_low_res</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="ArrangementButton">
+          <property name="text">
+           <string>1.Arrangement</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="update_bar">
+      <property name="maximumSize">
+       <size>
+        <width>1132</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar2">
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="jsonBrowser"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1216</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>file</string>
+    </property>
+    <addaction name="actionopen"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>input_path</tabstop>
+  <tabstop>output_path</tabstop>
+  <tabstop>x_lengthEdit</tabstop>
+  <tabstop>y_lengthEdit</tabstop>
+  <tabstop>overlapXEdit</tabstop>
+  <tabstop>overlapYEdit</tabstop>
+  <tabstop>wildnameEdit</tabstop>
+  <tabstop>vixel_sizeEdit</tabstop>
+  <tabstop>high_res_input_folder_Button</tabstop>
+  <tabstop>high_res_input_path</tabstop>
+  <tabstop>highest_vixel_sizeEdit</tabstop>
+  <tabstop>all_stitch1</tabstop>
+  <tabstop>part_stitch1</tabstop>
+  <tabstop>all_stitch2</tabstop>
+  <tabstop>part_stitch2</tabstop>
+  <tabstop>all_stitch3</tabstop>
+  <tabstop>part_stitch3</tabstop>
+  <tabstop>all_stitch4</tabstop>
+  <tabstop>part_stitch4</tabstop>
+  <tabstop>all_stitch5</tabstop>
+  <tabstop>part_stitch5</tabstop>
+  <tabstop>all_stitch6</tabstop>
+  <tabstop>part_stitch6</tabstop>
+  <tabstop>MIPpreviewButton</tabstop>
+  <tabstop>xy_shift_pushButton</tabstop>
+  <tabstop>low_res_z_shift_pushButton</tabstop>
+  <tabstop>high_res_x_y_shift_pushButton</tabstop>
+  <tabstop>jsonBrowser</tabstop>
+  <tabstop>InputJsonButton</tabstop>
+  <tabstop>CeateJsonButton</tabstop>
+  <tabstop>print_jsonButton</tabstop>
+  <tabstop>input_folderButton</tabstop>
+  <tabstop>output_folderButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
