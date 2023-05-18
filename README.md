@@ -45,7 +45,7 @@ The meaning of each input box is explained below:
 >>! The program will not automatically overwrite or overwrite the information of the json file on disk, and when you need to save the current stitching information, you need to manually click the `saveJson` button.
 ---
 ### Set Arrangement
-+After you have imported the initial information of the original data, click the first button to set the file arrangement.
+After you have imported the initial information of the original data, click the first button to set the file arrangement.
 ![arrangement](readme_res\arrangement.png)
 In the pop-up subwindow, select how the files are arranged in the folder.
 
