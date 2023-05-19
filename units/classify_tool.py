@@ -25,7 +25,24 @@ from skimage import morphology
 from scipy.spatial import distance_matrix
 from scipy.sparse.csgraph import minimum_spanning_tree
 from skimage.draw import line
+import numpy as np
+import heapq
 
+# 广度优先搜索
+def bfs(matrix, start, end):
+    queue = Queue()
+    queue.put((start, []))
+    visited = set()
+    while not queue.empty():
+        (x, y), path = queue.get()
+        if (x, y) == end:
+            return path
+        for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < len(matrix) and 0 <= ny < len(matrix[0]) and (nx, ny) not in visited:
+                queue.put(((nx, ny), path + [(nx, ny)]))
+                visited.add((nx, ny))
+    return []
 def calculate_features(image_data) :
     # 确保图像为 32 位单通道 TIFF 图像
     # assert image.mode == "I"
@@ -97,42 +114,92 @@ def predict_image(scaler,selector,svm,file):
 
 
 def erode_matrix(matrix, window_size):
-    
-    # 创建一个window_size x window_size的结构元素（侵蚀窗口）
-    selem = np.ones((window_size, window_size), dtype=np.uint8)
 
-    # 将原始矩阵中的1转换为True，-1转换为False
-    binary_matrix = matrix == 1
+    # 找到所有岛屿
+    islands = []
+    visited = set()
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] == 1 and (i, j) not in visited:
+                island = [(i, j)]
+                stack = [(i, j)]
+                visited.add((i, j))
+                while stack:
+                    x, y = stack.pop()
+                    for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+                        nx, ny = x + dx, y + dy
+                        if 0 <= nx < len(matrix) and 0 <= ny < len(matrix[0]) and matrix[nx][ny] == 1 and (nx, ny) not in visited:
+                            stack.append((nx, ny))
+                            visited.add((nx, ny))
+                            island.append((nx, ny))
+                islands.append(island)
 
-    # 对二值矩阵执行侵蚀操作
-    eroded_matrix = morphology.binary_erosion(binary_matrix, selem)
+    # 找到面积最大的岛屿
+    max_island = max(islands, key=len)
 
-    # 将侵蚀后的矩阵转换回原始矩阵的格式（1和-1）
-    result_matrix = np.where(eroded_matrix, 1, -1)
+    # 将非最大岛屿全部变为0
+    for island in islands:
+        if island is not max_island:
+            for x, y in island:
+                matrix[x][y] = 0
 
-    return result_matrix
+    return matrix
 
 def bresenham_line(matrix, point1, point2):
     rr, cc = line(point1[0], point1[1], point2[0], point2[1])
     matrix[rr, cc] = 1
     return matrix
 
-def connect_ones(matrix):
-    # 获取所有 1 的坐标
-    ones_coords = np.argwhere(matrix == 1)
+# def connect_ones(matrix):
+#     # 获取所有 1 的坐标
+#     ones_coords = np.argwhere(matrix == 1)
     
-    # 计算所有 1 之间的距离矩阵
-    dist_matrix = distance_matrix(ones_coords, ones_coords)
+#     # 计算所有 1 之间的距离矩阵
+#     dist_matrix = distance_matrix(ones_coords, ones_coords)
     
-    # 生成最小生成树
-    mst = minimum_spanning_tree(dist_matrix).toarray()
+#     # 生成最小生成树
+#     mst = minimum_spanning_tree(dist_matrix).toarray()
     
-    # 连接所有的 1
-    for i in range(len(ones_coords)):
-        for j in range(i + 1, len(ones_coords)):
-            if mst[i, j] != 0:  # 如果两个点在最小生成树中相连
-                matrix = bresenham_line(matrix, ones_coords[i], ones_coords[j])
+#     # 连接所有的 1
+#     for i in range(len(ones_coords)):
+#         for j in range(i + 1, len(ones_coords)):
+#             if mst[i, j] != 0:  # 如果两个点在最小生成树中相连
+#                 matrix = bresenham_line(matrix, ones_coords[i], ones_coords[j])
                 
+#     return matrix
+
+def connect_ones(matrix):
+    # 找到所有的岛屿
+    islands = []
+    visited = set()
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] == 1 and (i, j) not in visited:
+                island = [(i, j)]
+                stack = [(i, j)]
+                visited.add((i, j))
+                while stack:
+                    x, y = stack.pop()
+                    for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+                        nx, ny = x + dx, y + dy
+                        if 0 <= nx < len(matrix) and 0 <= ny < len(matrix[0]) and matrix[nx][ny] == 1 and (nx, ny) not in visited:
+                            stack.append((nx, ny))
+                            visited.add((nx, ny))
+                            island.append((nx, ny))
+                islands.append(island)
+
+    # 找到面积最大的岛屿
+    max_island = max(islands, key=len)
+
+    # 连接其他岛屿到最大岛屿
+    for island in islands:
+        if island is not max_island:
+            start = island[0]
+            end = max_island[0]
+            path = bfs(matrix, start, end)
+            for x, y in path:
+                matrix[x][y] = 1
+
     return matrix
 
 def classify_compute(folder_path,file_list,indices_positve,indices_negative,row,col):
